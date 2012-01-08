@@ -159,8 +159,15 @@ while (($line = fgetcsv($in)) !== FALSE) {
       case 'IM 1 - Value':
         $data['IM 1 - Service'] = "Skype";
         break;
+      case 'Group Membership':
+        if (empty($data['Group Membership'])) {
+          $data['Group Membership'] = "* My Contacts";
+        }
+        elseif (!preg_match("/\* My Contacts/", $data['Group Membership'])) {
+          $data['Group Membership'] .= " ::: * My Contacts";
+        }
     }
-     
+    
   }
 
   # Write the fields into an array in the correct order for the CSV file
