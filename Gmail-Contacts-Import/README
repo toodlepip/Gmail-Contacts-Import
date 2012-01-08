@@ -1,0 +1,78 @@
+### GMAIL CONTACTS MUNGER
+by Sam Michel - http://toodlepip.co.uk - @toodlepip
+N.B. Use at your own risk. Backups are your friend!
+
+### USAGE
+
+cards2gmail.php -f input_filename [-v] [-o output_filename]
+
+-f input filename, see below on the format for this file
+-v verbose, display dump of any errors
+-o specify output filename, defaults to: gmail-import.csv
+
+Requirements: PHP 5.1 or greater and command-line PHP
+
+Importing the contacts should create a new group in Gmail, labelled with the
+date the import was made. This means it's easy to delete the contacts if it
+goes wrong. 
+
+But I can't stress this enough:
+
+BACKUPS ARE YOUR FRIEND!
+
+Take a backup before you start playing. Just think how long it took to put
+together all of those contacts eh?!
+
+### CREATING CSV INPUT FILE
+
+You can make a copy of the Google Spreadsheet, save a copy with your contacts
+added then feed it to the script:
+
+https://docs.google.com/spreadsheet/ccc?key=0AmLbS8Gq5NUHdDZpWlRfMnF0NWdLSjdzN1hxWU40Q1E
+
+Or you can roll your own CSV with the following headings - they're all 
+optional, but Gmail might not work if you're missing too many of the key ones:
+
+Name
+Work Email
+Company
+Job Title
+Work Phone
+Mobile Phone
+Street
+City
+Region
+Postal Code
+Country
+Group Membership
+Notes
+Work Website
+Skype
+Twitter
+
+### BACKGROUND
+
+This is a very simple PHP script that was put together to try and simplify the
+process of manually adding lots of business cards to Gmail Contacts. I found
+that the web interface was very slow and involved lots of clicking around.
+
+The basic info on the Gmail website only allows the additional of very basic
+information and offended by organisational OCD by putting data in the wrong
+places. You can find the info here, if you're interested:
+
+https://support.google.com/mail/bin/answer.py?hl=en&answer=12119
+
+It's not very helpful. To get an idea of how Gmail organises it contacts, I
+exported a really detailed contact in their native CSV format.
+
+The hope was that it'd be quicker to whip through a spreadsheet of contact
+details in the native format and upload it. Sadly, it's complicated and doesn't
+lend itself to speedy data-entry.
+
+The script uses a very simple spreadsheet that should be very quick to fill out
+with understandable headings. This gets saved into a CSV format and fed to the
+script which'll make some assumptions, check some values and spit out a CSV
+format that can be imported using Gmail Contacts standard function.
+
+I hope it's useful. Feel free to tinker/change/update, there's enormous room
+for improvement.
