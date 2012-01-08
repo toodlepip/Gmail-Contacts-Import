@@ -51,6 +51,9 @@ the headings (they're all optional):
 
 https://docs.google.com/spreadsheet/ccc?key=0AmLbS8Gq5NUHdDZpWlRfMnF0NWdLSjdzN1hxWU40Q1E
 
+N.B. Don't forget to separate Group Memberships with ::: for example -
+Work Contacts ::: Christmas List ::: Other People
+
 END;
   exit;
 }
